@@ -1,0 +1,124 @@
+<div class="container">
+  <main role="main">
+    <header>
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand font-weight-bold text-choco ml-5" href="#!/dashboard">RentHouse</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link"  href="#!/dashboard">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/products">Available Products</a>
+                </li>
+              </ul>
+              <!-- <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              </form> -->
+            </div>
+            <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+              <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              </form>
+            </div>
+            <div class="collapse navbar-collapse justify-content-md-end right-menu" id="navbarCollapse2">
+              <ul class="navbar-nav" ng-if="!this.authUser">
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/signup">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/register">
+                    <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+                  </a>
+                </li>
+              </ul>
+              <ul class="navbar-nav" ng-if="this.authUser">
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/profile"><i class="fa fa-user"></i> Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/logout"><i class="fa fa-power-off"></i> Logout</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#!/register">
+                    <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <div id="landCover">
+      <div class="enveloper">
+          <div class="envelop"></div>
+      </div>
+      <div class="presents">
+        <div class="main-presents">
+          <h3 class="text-center">Your accomodation is our requirement</h3>
+        </div>
+        <div class="presents-animation">
+            Click on contribute to, <span class="app-roles"></span>
+        </div> 
+        <div class="secondary-presents text-center">
+              <a class="btn btn-primary btn-c-round mt-4 mb-0" href="#!/add_product">
+                  <i class="fa fa-plus fa-lg"></i> Contribute
+              </a>
+              <hr class="horizontal-line"></hr>  
+          </div>
+      </div>  
+    </div>
+      <!-- available products in system  -->
+      <div class="products-container">
+        <div class="loader text-center" ng-if="products===null">
+          <i class="fa fa-spinner fa-spin fa-4x text-primary mt-4 mb-4" ></i>
+        </div>
+        <div class="row no-gutters" ng-repeat="product in products">
+          <div class="col-md-6 p-2 mb-1" ng-repeat="p in product">
+              <div class="card product">
+                  <div class="card-body pt-1 pl-2 pr-2">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="product-header mb-2"> 
+                                  <i class="fa {{p.category === 2 ? 'fa-home fa-lg' : 'fa-automobile'}} p-2"></i> {{ p.pcategory.category_name }}
+                              </div>
+                              <div class="product-image" ng-click="logInfos(product)">
+                                <img ng-src="http://localhost/renthouse_api/{{p.product_pictures[0].picture_url}}" alt="Image + {{p.pcategory.category_name}}" class="img-responsive w-100">
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="product-header">
+                                <i class="fa fa-superpowers p-2"></i> Features
+                              </div>
+                              <hr class="mt-2"></hr>
+                              <div>
+                                {{ p.product_description}}
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="btn btn-choco btn-sm text-light" ng-click="requestProduct(p.id)">
+                          <i class="fa fa-shopping-cart fa-lg"></i> Request this {{ p.pcategory.category_name }}
+                      </button>
+                    <button class="btn btn-envelop btn-sm text-light float-right">
+                      <i class="fa fa-leaf"></i> View more
+                    </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="arrow-right float-right mr-3 mb-4">
+          <a href="#!/products"> View more <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <!-- End 5 products inside our stock -->
+  </main>
+  <footer ng-include="includes/footer.html">
+  </footer>
+</div>

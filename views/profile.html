@@ -1,0 +1,210 @@
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand font-weight-bold text-choco ml-5" href="#!/dashboard">RentHouse</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link"  href="#!/dashboard">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/products">Available Products</a>
+              </li>
+            </ul>
+            <!-- <form class="form-inline mt-2 mt-md-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form> -->
+          </div>
+          <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+            <form class="form-inline mt-2 mt-md-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+          </div>
+          <div class="collapse navbar-collapse justify-content-md-end right-menu" id="navbarCollapse2">
+            <ul class="navbar-nav" ng-if="!this.authUser">
+              <li class="nav-item">
+                <a class="nav-link" href="#!/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/signup">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/register">
+                  <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+                </a>
+              </li>
+            </ul>
+            <ul class="navbar-nav" ng-if="this.authUser">
+              <li class="nav-item">
+                <a class="nav-link" href="#!/profile"><i class="fa fa-user"></i> Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/logout"><i class="fa fa-power-off"></i> Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/register">
+                  <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+</header>
+<div class="AdminPanel">
+	<div class="sidebar-nav">
+		<nav class="sidebar-navigation">
+			<div class="peace-column sidebar-left">
+				<div class="profile mt-4 pt-4 pl-2">
+					<div class="font-weight-bold text-light text-center">
+	
+						<span class="float-right dropdown mr-2"> 
+							<a class="dropdown-toggle pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdown03"> 
+								<i class="fa fa-cog"></i>
+							</a>
+							
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown03">
+								<a class="dropdown-item" href="/profiles/view">
+									<i class="fa fa-user-o"></i> Mon Profile
+								</a>
+								<a class="dropdown-item" href="/profiles/update">
+									<i class="fa fa-key"></i> Changer Profile
+								</a>
+								<a class="dropdown-item" href="/credits/"> 
+									<i class="fa fa-money"></i> Mes Crédits
+								</a>
+								<hr></hr>
+								<a class="dropdown-item" href="/users/logout">
+									<i class="fa fa-power-off"></i> Deconnexion
+								</a>
+							</div>
+						</span>
+					</div>
+					<div class="profile-avatar">
+						<img ng-src="{{avatar}}">
+					</div>
+					
+					<div class="u-infos float-right pr-2 text-light">
+						<span class="badge right">{{ authUser.first_name }} </span><br>
+						<div class="badge">
+							{{ authUser.email }}
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="menus">
+						
+					<ul class="navbar-nav">
+						<li class="navbar-item">
+							<a href="/dashboard" >
+								<i class="fa fa-dashboard fa-lg"></i><span class="sidebar-m-description">Dashboard</span>
+							</a>
+						</li>
+						<li class="navbar-item ">
+							<a href="/users">
+								<i class="fa fa-users fa-lg"></i><span class="sidebar-m-description">Utilisateurs</span>
+							</a>
+						</li>
+						<li class="navbar-item">
+							<a href="/categories">
+								<i class="fa fa-book fa-lg"></i><span class="sidebar-m-description">Catégories</span>
+							</a>
+						</li>
+						<li class="navbar-item">
+							<a href="/products">
+								<i class="fa fa-edit fa-lg"></i><span class="sidebar-m-description">Nos Produits</span>
+							</a>
+						</li>
+						<li class="navbar-item">
+							<a href="/credits">
+								<i class="fa fa-credit-card fa-lg"></i><span class="sidebar-m-description">Crédits</span>
+							</a>
+						</li>
+						<li class="navbar-item">
+							<a href="/sales">
+								<i class="fa fa-shopping-cart fa-lg"></i><span class="sidebar-m-description">Ventes</span>
+							</a>
+						</li>
+						<li class="navbar-item">
+							<a href="/administration">
+								<i class="fa fa-pie-chart fa-lg"></i><span class="sidebar-m-description">Statistiques</span>
+							</a>
+						</li>
+						<li class="navbar-item">
+							<a href="/users/logout">
+								<i class="fa fa-power-off fa-lg"></i><span class="sidebar-m-description">Deconnexion</span>
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+		</nav> 
+	</div>
+	<div class="admin-ui-contents">
+		<div class="peace-column-contents">
+				<div class="row products profile-contents">
+					<div class="col-md-6 p-2 mb-1" ng-repeat="product in products">
+						<div class="card product">
+							<div class="card-body pt-1 pl-2 pr-2">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="product-header mb-2"> 
+											<i class="fa {{product.pcategory.category_name == 'Cars' ? 'fa-automobile fa-lg' : 'fa-home fa-lg'}} p-2"></i> 
+											{{ product.pcategory.category_name }} {{product.motif === 1 ? 'Allowance' : 'Sale (To be sold)' }}
+										</div>
+										<div class="product-image">
+											<img ng-src="{{product.url}}" alt="Image + {{product.name}}" class="img-responsive w-100">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="product-header">
+											<i class="fa fa-superpowers p-2"></i> Features
+										</div>
+										<hr class="mt-2"></hr>
+										{{ product.product_description }}
+									</div>
+								</div>
+							</div>
+							<div class="card-footer text-right">
+								<button class="btn btn-danger bg-danger btn-sm text-light">
+								<i class="fa fa-trash"></i> Delete
+								</button>
+								<button class="btn btn-envelop btn-sm text-light">
+								<i class="fa fa-leaf"></i> View more
+								</button>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+		</div>
+	</div>
+</div>
+<!-- <div class="wrapper row no-gutters">
+    <div id="sidebar" class="col-md-3">
+         <nav>
+            <div class="sidebar-header text-center">
+                <img ng-src="{{avatar}}" class="rounded-circle">
+                <br>
+                <span class="font-weight-bold">{{ authUser.last_name + " " + authUser.first_name }}</span>
+                <br>
+                <span class="user-infos">{{ authUser.email }}</span>
+            </div>
+
+            <ul class="list-unstyled custom-list">
+                <li>
+                    <a href="#!/activities" class="text-white"><i class="fa fa-home fa-lg"></i> Home</a>
+                </li>
+                <li>
+                    <a href="#!/activities" class="text-white"><i class="fa fa-refresh fa-lg"></i> Activities</a>
+                </li>
+                <li>
+                    <a href="#!/activities" class="text-white"><i class="fa fa-pencil fa-lg"></i> Change Profile</a>
+                </li>
+            </ul>
+        </nav> 
+    </div>-->

@@ -1,0 +1,77 @@
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <a class="navbar-brand font-weight-bold text-choco ml-5" href="#!/dashboard">RentHouse</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link"  href="#!/dashboard">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/products">Available Products</a>
+              </li>
+            </ul>
+            <!-- <form class="form-inline mt-2 mt-md-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form> -->
+          </div>
+          <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+            <form class="form-inline mt-2 mt-md-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            </form>
+          </div>
+          <div class="collapse navbar-collapse justify-content-md-end right-menu" id="navbarCollapse2">
+            <ul class="navbar-nav" ng-if="!this.authUser">
+              <li class="nav-item">
+                <a class="nav-link" href="#!/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/signup">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/register">
+                  <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+                </a>
+              </li>
+            </ul>
+            <ul class="navbar-nav" ng-if="this.authUser">
+              <li class="nav-item">
+                <a class="nav-link" href="#!/profile"><i class="fa fa-user"></i> Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/logout"><i class="fa fa-power-off"></i> Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!/register">
+                  <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+<div class="container">
+    <div class="text-center mt-5">
+        
+        <form class="form-signin" ng-model="User" ng-submit="signin()">
+            <h1 class="h3 mb-3 font-weight-normal" ng-cloak>
+                <i class="fa fa-automobile fa-lg"></i> {{ message }}
+            </h1>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control first rounded-0" placeholder="Email address" required="" autofocus="" ng-model="User.email">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control last rounded-0" placeholder="Password" required="" ng-model="User.password">
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me 
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Sign in <i class="fa fa-spinner fa-spin loader" ng-if="isLoading"></i>
+            </button>
+            <p class="mt-4 mb-3 text-muted">Safe Journey</p>
+          </form>
+    </div>
+</div>

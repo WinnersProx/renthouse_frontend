@@ -1,0 +1,480 @@
+body{
+    background:rgba(204, 229, 253, 0.5);
+    padding-top: 2.5rem;
+}
+/* Body scrollbar customization */
+body::-webkit-scrollbar{
+	width: 7px;
+}
+body::-ms-scrollbar{
+	width: 7px;
+}
+body::-ms-scrollbar-thumb{
+	border-radius:0px 0px 6px 6px;
+	background-color:rgba(61,39,93,.5)hsla(274, 8%, 8%, 0.5);
+}
+body::-webkit-scrollbar-thumb{
+	border-radius:0px 0px 6px 6px;
+	background-color:rgba(61,39,93,.5);
+}
+/* Header customization */
+.bg-dark{
+  background-color: #ffffff!important;
+  border-bottom: 2px solid #c57d37 !important;
+}
+/* E */
+/* CUSTOMIZE THE CAROUSEL
+  -------------------------------------------------- */
+  
+  /* Carousel base class */
+  .carousel {
+    margin-bottom: .5rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+    background-color: #777;
+  }
+  .carousel-item > img {
+    position: absolute;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+  
+  .carousel-img{
+      top: 20px;
+      width: 100% !important;
+      height: 100%;
+  }
+ /*** Validations */
+ form input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+  form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+    border: 1px solid #ced4da;
+  }
+ /*** /
+  
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  
+  @media (min-width: 40em) {
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+  }
+  
+  /*  About the top navbar */
+  .navbar-brand{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3em;
+  }
+
+  .text-choco{
+    color: rgb(91, 69, 220) !important;
+  }
+  .bg-choco{
+    background:rgb(210, 105, 5);
+    color: #ffff;
+  }
+  ul li a{
+    color: rgb(210, 105, 5) !important;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: 'Trebuchet MS';
+  }
+  /* right menu is the second collapse class in the header */
+  .navbar{
+    padding: 0 !important;
+    padding-left: .5em !important;
+    margin-top: -1px !important;
+  }
+  .right-menu{
+    background: rgb(197, 125, 55);
+    margin-bottom: -1px !important;
+    -webkit-clip-path: polygon(29% 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(29% 0, 100% 0%, 100% 100%, 0% 100%);
+    max-width: 300px;
+  }
+  .right-menu a{
+    color: #ffff !important;
+    font-weight: normal;
+  }
+  .navbar input[type="text"]{
+    background: transparent;
+    height:30px !important;
+    width: 300px;
+    border-radius: 1em;
+    box-shadow: none;
+    border:none;
+    border: 1px solid  rgba(65, 0, 255, 0.4);
+    color: #c57d37;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  /* This section is about products on the dashboard */
+  .pointer{
+    cursor: pointer;
+  }
+  .products-container{
+    margin-top: -3.5rem;
+  }
+  .products-container  .product{
+    z-index:300;
+    background: #ffff;
+    border-radius: .5rem;
+  }
+  .product  .product-header{
+    font-family: inherit;
+    font-weight: 500;
+  }
+  .card hr{
+    border-color: rgba(210, 105, 5, .5) !important;
+  }
+  .profile-contents .card-body{
+    min-height: 150px;
+    max-height: 150x;
+  }
+  .product-image img{
+    height: 150px;
+    border-radius: .5rem;
+    border: 1px solid rgba(210, 105, 5,.5);
+    background:rgba(65, 0, 255, 0.5);
+  }
+  .arrow-right, .arrow-right a{
+    color:rgb(210, 105, 5) !important;
+  }
+  .product-header i{
+    background: #ffff;
+    border: 2px solid rgb(210, 105, 5);
+    border-radius: 50%;
+  }
+  .btn-envelop{
+    background: rgba(65, 0, 255, 0.8) !important;
+    border: 2px solid rgba(65, 0, 255, 0.9)  !important;
+    border-radius: 10rem !important;
+  }
+ /* Login and signup interfaces */
+ .form-signin {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+}
+select{
+  border-radius: 0 !important;
+}
+select:focus{
+  box-shadow: none !important;
+}
+.form-signin input.first {
+  margin-bottom: -1px;
+  border-top-right-radius: 0.25rem !important;
+  border-top-left-radius: 0.25rem !important;
+}
+.form-signin input.last {
+  margin-top: -1px;
+  border-bottom-right-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}
+.form-signin .form-control{
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control.select{
+  padding: 8px !important;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  margin-top: -1px;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-signin input:focus{
+  outline: none;
+  box-shadow: none;
+}
+.form-signin button{
+  background: rgba(210, 105, 5, .7);
+  border: 1px solid rgba(210, 105, 5, .7);
+}
+
+/* About the users profile*/
+.wrapper{
+  background: rgba(180, 182, 236, .1);
+  width: 100%;
+  height: calc(100vh - 2.5rem);
+  /* align-items: stretch; */
+   overflow: hidden; 
+}
+#sidebar{
+  background: rgba(65, 0, 255, 0.4);
+  border-right: 1px solid rgba(0,0,0,.1);
+  min-width: 20%;
+  max-width: 20%;
+  height: calc(100vh - 2.5rem);
+  margin-right: 0.5em !important;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+#content{
+  width: 80% !important;
+  height: calc(100vh - 2.5rem);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* Not very important to add features */
+}
+#sidebar, #content{
+  display: inline-block;
+}
+#sidebar .sidebar-header{
+  width: 100%;
+  margin:0.8em 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+#sidebar .sidebar-header img{
+  border:4px solid rgba(135, 136, 150, 0.8);
+}
+
+.user-infos{
+  color: white;
+  font-weight: 200;
+}
+ul.custom-list li{
+  padding: 0.5em 0.7em !important; 
+}
+input[type="file"]{
+  opacity: 0;
+  /*position: absolute;*/
+  left:0;
+  width: 15px;
+}
+label, input[type="file"]{
+  cursor: pointer;
+}
+/* All About Products*/
+/* All about my profile contents*/
+/*Users side */
+
+
+/*Administration part*/
+#Administration{
+	margin-top: -41px !important;
+	position: relative;
+	background-color: white;
+	height: 100vh;
+	color: black;
+	margin: 0 !important;
+}
+#Administration .peace-row{
+	background: white;
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	height: 100vh;
+
+}
+.custom-link-color{
+	color: #9980bd !important;
+}
+
+
+
+.admin-nav{
+	background-color: white;
+	color: black;
+	padding: 0 1rem !important;
+	border-bottom: 1px solid gray;
+}
+.AdminPanel{
+	margin-top: -75px !important;
+	display: flex;
+	position: relative;
+	height: calc(100vh);
+}
+.sidebar-nav{
+	background: rgba(65, 0, 255, 0.4);
+  border-right: 1px solid rgba(0,0,0,.1);
+	overflow: hidden;
+	/*flex-direction: column;*/
+	position: fixed;
+	width: 20%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	min-width: 12%;
+	z-index: 2;
+}
+.ftop-nav{
+	width: 80%;
+	left: 20%;
+	z-index: 1 !important;
+}
+
+/*.sidebar-nav, .admin-ui-contents{
+	display: inline-block;
+}*/
+.dropdown-toggle::after{
+  display: none;
+}
+.admin-ui-contents{
+	margin-left: 20%;
+	padding-top: 60px;
+	width: 80%;
+}
+.sidebar-nav .profile{
+	background: rgb(195, 142, 90);
+	padding: 0.5em 0;
+	min-height: 130px;
+	/*text-align: center;*/
+	border-bottom:1px solid rgba(0,0,0,.1);
+}
+.u-infos{
+	margin-top: -20px;
+}
+
+.sidebar-nav .profile-avatar img{
+	padding :2px;
+	border-radius: 50%;
+	width: 65px;
+	height: 65px;
+	border: 2px solid var(--primary);
+	border-radius: 50%;
+}
+.menus .navbar{
+	margin: 0!important;
+	padding: 0 !important;
+	display: inline-block ;
+}
+.menus .navbar-nav li{
+	margin-left: -10px !important;
+	padding-left: 10px;
+}
+
+
+.menus{
+	width: 100%;
+}
+.menus ul{
+	/*margin: inherit;*/
+	margin: 0.4rem 0.6em;
+	width: 100%;
+}
+.menus ul li{
+	color: white;
+	/*background-color: blue;*/
+	width: 100%;
+	padding: 0.5em 0;
+	margin: 0.1em 0;
+	margin-right: 0;
+}
+.menus ul li a{
+	color: rgb(239, 239, 239);
+}
+.menus ul li.activated{
+	background: #4e3e4d;
+	color: white;
+	border-bottom: 2px solid var(--primary);
+}
+.menus a:hover{
+	color: white;
+	text-decoration: none;
+}
+.menus a i{
+	margin-right: 0.3em;
+}
+
+/*peace row contents*/
+.peace-column-contents{
+	padding: 1.5em 1.3em;
+	width: 100%;
+}
+
+/* New changes */
+div#landCover{
+  position: relative;
+  height: 500px;
+  width: 100%;
+  padding-top:225px;
+  background: url("../images/landing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+  border-radius:0 0 .5rem .5rem;
+}
+.presents{
+  position:absolute;
+  top:0;
+  padding-top:200px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  z-index:200;
+}
+.main-presents{
+  font-size: 1.5em;
+}
+.presents-animation{
+  font-size: 1.5em;
+}
+.app-roles{
+  transition: all .5s ease-in-out;
+}
+.envelop{
+  background:rgba(65, 0, 255, 0.5);
+  border-radius: .5rem;
+  position: absolute;
+  top: 0;
+  min-width: 100%;
+  height: 100%;
+  z-index:100;
+}
+.btn-c-round{
+  margin:0 auto;
+  padding: .9rem 2.25rem;
+  font-size: .90rem;
+  font-weight: normal;
+  border: none;
+  border-radius: 10rem;
+  background: #c57d37 !important;
+}
+.btn-line:before{
+  content:"";
+  height: 2em;
+  width: 100%;
+  color: #c57d37;
+}
+.btn-choco{
+  background: #bc34ff;
+  border-radius: 10rem !important;
+}
+.horizontal-line{
+  border-top:1px solid #c57d37 !important;
+  /* margin-top:0; */
+  margin-top: -1.5rem;
+}

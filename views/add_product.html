@@ -1,0 +1,97 @@
+<header>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	  <a class="navbar-brand font-weight-bold text-choco ml-5" href="#!/dashboard">RentHouse</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link"  href="#!/dashboard">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#!/products">Available Products</a>
+		  </li>
+		</ul>
+		<!-- <form class="form-inline mt-2 mt-md-0">
+		  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+		</form> -->
+	  </div>
+	  <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+		<form class="form-inline mt-2 mt-md-0">
+		  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+		</form>
+	  </div>
+	  <div class="collapse navbar-collapse justify-content-md-end right-menu" id="navbarCollapse2">
+		<ul class="navbar-nav" ng-if="!this.authUser">
+		  <li class="nav-item">
+			<a class="nav-link" href="#!/login">Login</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#!/signup">Sign Up</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#!/register">
+			  <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+			</a>
+		  </li>
+		</ul>
+		<ul class="navbar-nav" ng-if="this.authUser">
+		  <li class="nav-item">
+			<a class="nav-link" href="#!/profile"><i class="fa fa-user"></i> Profile</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#!/logout"><i class="fa fa-power-off"></i> Logout</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#!/register">
+			  <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+			</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+</header>
+<div class="container mt-4">
+	<form class="row" ng-submit="addProduct()" ng-model="Product">
+		<div class="col-md-5">
+			<h3>Add Product Pictures </h3>
+			<label class="btn btn-envelop text-white btn-sm">
+				<input type="file" multiple="multiple" file-input="Product.product_images">
+				<i class="fa fa-upload"></i> Upload Pictures 
+			</label>
+		</div>
+		<div class="col-md-5">
+			<div class="card">
+				<div class="card-header font-weight-bold">
+					Product Infos
+				</div>
+				<div class="card-body">
+					<div class="form-group">
+						<label for="productDescription">Description | (Features)</label>
+						<input type="text" name="product_description" id="productDescription" placeholder="Ex : Very Confortable ..." class="form-control rounded" required ng-model="Product.product_description">
+					</div>
+					<div class="form-group">
+						<label for="category">Category(Category of the product)</label>
+						<select id="category" class="form-control rounded" id="category" required ng-model="Product.category">
+							<option value="1">Car</option>
+							<option value="2">House</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="motif">Motif</label>
+						<select id="motif" class="form-control rounded" id="motif" required ng-model="Product.motif">
+							<option value="0">Allowance</option>
+							<option value="1">Sell</option>
+						</select>
+					</div>
+				</div>
+				<div class="card-footer">
+					<button class="btn btn-choco bg-choco  text-white float-right" type="submit">
+						<i class="fa fa-check-circle"></i> Validate <i class="fa fa-spinner fa-pulse" ng-if="isLoading"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

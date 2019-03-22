@@ -1,0 +1,83 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand font-weight-bold text-choco ml-5" href="#!/dashboard">RentHouse</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link"  href="#!/dashboard">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!/products">Available Products</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        </form> -->
+      </div>
+      <div class="collapse navbar-collapse justify-content-md-start" id="navbarCollapse">
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+      <div class="collapse navbar-collapse justify-content-md-end right-menu" id="navbarCollapse2">
+        <ul class="navbar-nav" ng-if="!this.authUser">
+          <li class="nav-item">
+            <a class="nav-link" href="#!/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!/signup">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!/register">
+              <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav" ng-if="this.authUser">
+          <li class="nav-item">
+            <a class="nav-link" href="#!/profile"><i class="fa fa-user"></i> Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!/logout"><i class="fa fa-power-off"></i> Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!/register">
+              <i class="fa fa-american-sign-language-interpreting" title="Translate"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="text-center mt-5">
+        
+        <form class="form-signin" name="user" ng-submit="newUser()" ng-init="initialize()">
+            <h1 class="h3 mb-3 font-weight-normal">
+                <i class="fa fa-automobile fa-lg"></i> {{ message }}
+            </h1>
+            <input type="email" id="inputEmail" class="form-control rounded-0 first" placeholder="Email address" required="" autofocus="" ng-model="User.email" name="email">
+            <input type="text" id="fname" class="form-control rounded-0" placeholder="First Name" required="" autofocus="" ng-model="User.first_name">
+            <input type="text" id="lname" class="form-control rounded-0" placeholder="Last Name" required="" autofocus="" ng-model="User.last_name">
+            <input type="text" id="phone" class="form-control rounded-0" placeholder="Telephone Number" required="" autofocus="" ng-model="User.phone">
+            <!-- <select ng-model="User.sex" id="sex" class="form-control" size="">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select> -->
+            
+            <select ng-model="User.sex" class="form-control select">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <input type="password" id="inputpass" class="form-control rounded-0" placeholder="Password" required="" autofocus="" ng-model="User.password">
+            <input type="password" id="inputPassword" class="form-control rounded-0 last" placeholder="Confirm Password" required="" ng-model="User.password_confirm">
+            <button class="btn btn-lg btn-primary btn-block mt-2 signup-btn" type="submit" ng-disabled="user.$valid === false ? true : false">
+                <i class="fa fa-spinner fa-pulse" ng-show="loading"></i> Sign Up
+            </button>
+            <p class="mt-4 mb-3 text-muted">Welcome, we'll take care of you<i></i></p>
+        </form>
+    </div>
+</div>
